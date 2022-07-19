@@ -1,7 +1,9 @@
 import React from "react";
+
 import Logo from "../../assets/logo.png";
 import Login from "../../assets/icon-login.png";
-import "../../styles/landingpage.sass";
+
+import "../../styles/landingpage.scss";
 
 const Navbar = () => {
   return (
