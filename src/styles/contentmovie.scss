@@ -1,0 +1,33 @@
+.box-movie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.box-card-movie {
+  width: 170px;
+  height: 255px;
+}
+
+.box-card-movie img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.box-card-movie p {
+  position: relative;
+  z-index: 1;
+  bottom: 57px;
+  background-color: rgba(0, 0, 0, 0.486);
+  height: 43px;
+  color: white;
+  padding-left: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 10px;
+}
