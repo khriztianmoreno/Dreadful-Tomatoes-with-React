@@ -44,3 +44,49 @@ body {
   align-items: center;
   gap: 10px;
 }
+
+.header-navbar-sections {
+  display: flex;
+  gap: 30px;
+}
+
+.header-navbar-sections p {
+  color: white;
+}
+
+.header-navbar-movies {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+}
+.header-navbar-movies-red {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+  background-color: red;
+}
+
+.header-navbar-tvshows {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+}
+
+.header-navbar-tvshows-red {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: red;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+}
