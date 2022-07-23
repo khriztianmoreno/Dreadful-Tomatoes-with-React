@@ -12,7 +12,6 @@ const Content = () => {
       {Movies.map((data) => (
         <div className="box-card-movie">
           <img src={data?.images["Poster Art"]?.url} alt={data.title} />
-
           <p>{data.title}</p>
         </div>
       ))}
