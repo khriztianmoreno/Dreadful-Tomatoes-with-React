@@ -1,9 +1,9 @@
 import React from "react";
 
-import Logo from "../../assets/logo.png";
-import Login from "../../assets/icon-login.png";
+import Logo from "../assets/logo.png";
+import Login from "../assets/icon-login.png";
 
-import "../../styles/landingpage.scss";
+import "../styles/landingpage.scss";
 
 const Navbar = () => {
   return (

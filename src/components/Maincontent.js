@@ -1,9 +1,9 @@
 import React from "react";
 
-import Movies from "../../assets/movies.png";
-import Series from "../../assets/series.png";
+import Movies from "../assets/movies.png";
+import Series from "../assets/series.png";
 
-import "../../styles/maincontent.scss";
+import "../styles/maincontent.scss";
 
 const Maincontent = () => {
   return (
