@@ -1,7 +1,11 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
-const Tvshows = () => {
-  return <div>Tvshows</div>;
+const Tvshows = ({ tag }) => {
+  return (
+    <>
+      <Navbar tag={tag} />
+    </>
+  );
 };
-
 export default Tvshows;
