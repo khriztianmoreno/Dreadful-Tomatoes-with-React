@@ -18,16 +18,22 @@
   max-width: 100%;
 }
 
-.box-card-movie p {
+.box-card-title {
+  height: 43px;
   position: relative;
   z-index: 1;
-  bottom: 57px;
-  background-color: rgba(0, 0, 0, 0.486);
-  height: 43px;
+  bottom: 47px;
+  background-color: rgba(0, 0, 0, 0.658);
+  margin: 0;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box-card-title p {
   color: white;
-  padding-left: 10px;
+  padding-left: 7px;
   font-family: sans-serif;
   font-weight: 600;
-  margin: 0;
-  padding-top: 10px;
 }
