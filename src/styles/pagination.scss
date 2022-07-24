@@ -1,0 +1,45 @@
+.box-container {
+  background-color: rgba(0, 0, 0, 0.87);
+  padding: 30px;
+}
+
+.pagination {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+  margin: 0px;
+}
+
+.page-link:link {
+  text-decoration: none;
+}
+
+.page-link:visited {
+  color: white;
+}
+
+.page-item {
+  background-color: rgba(255, 0, 0, 0.589);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.active {
+  background-color: red;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
