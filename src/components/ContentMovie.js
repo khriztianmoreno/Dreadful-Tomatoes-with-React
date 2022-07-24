@@ -1,16 +1,12 @@
 import React from "react";
 
-import Data from "../data/data.json";
-
 import "../styles/contentmovie.scss";
 
-const Content = () => {
-  const Movies = Data.entries.filter((data) => data.programType === "movie");
-
+const Content = ({ movies }) => {
   return (
     <section className="box-movie">
-      {Movies.map((data) => (
-        <div className="box-card-movie">
+      {movies.map((data) => (
+        <div key={data.title} className="box-card-movie">
           <img src={data?.images["Poster Art"]?.url} alt={data.title} />
           <div className="box-card-title">
             <p>{data.title}</p>
