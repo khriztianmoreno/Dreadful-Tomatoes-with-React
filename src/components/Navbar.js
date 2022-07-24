@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Logo from "../assets/logo.png";
 import Login from "../assets/icon-login.png";
@@ -8,6 +9,16 @@ import TvShows from "../assets/icon-series.png";
 import "../styles/navbar.scss";
 
 const Navbar = ({ tag }) => {
+  let navigate = useNavigate();
+
+  const showMovies = () => {
+    navigate("/movies");
+  };
+
+  const showTvShow = () => {
+    navigate("/tvshows");
+  };
+
   return (
     <header className="header">
       <nav className="header-navbar">
@@ -15,6 +26,7 @@ const Navbar = ({ tag }) => {
         {tag && (
           <div className="header-navbar-sections">
             <div
+              onClick={showMovies}
               className={
                 tag === "movies"
                   ? "header-navbar-movies-red"
@@ -25,6 +37,7 @@ const Navbar = ({ tag }) => {
               <p>Movies</p>
             </div>
             <div
+              onClick={showTvShow}
               className={
                 tag === "tvshows"
                   ? "header-navbar-tvshows-red"
