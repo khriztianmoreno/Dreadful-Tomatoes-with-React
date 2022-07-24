@@ -1,0 +1,27 @@
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+.footer-logo img {
+  max-height: 150px;
+  max-width: 150px;
+  margin-top: 20px;
+}
+
+.footer-nav {
+  color: white;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-store {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-right {
+  color: white;
+}
