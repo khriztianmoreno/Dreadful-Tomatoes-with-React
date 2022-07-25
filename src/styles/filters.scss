@@ -1,0 +1,24 @@
+.input-search[type="text"] {
+  width: 800px;
+  border: none;
+  border-radius: 15px;
+  margin: 8px 0;
+  outline: none;
+  padding: 5px;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 0px 8px 12px;
+  background-color: red;
+}
+
+.icon {
+  position: relative;
+  left: 34px;
+  padding: 9px 8px;
+  color: rgb(255, 0, 0);
+}
