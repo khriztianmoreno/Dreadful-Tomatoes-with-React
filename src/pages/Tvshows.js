@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Navbar from "../components/Navbar";
+import Filters from "../components/Filters";
 import Content from "../components/Content";
 import Pagination from "../components/Pagination";
 import Footer from "../components/Footer";
@@ -22,6 +23,7 @@ const Tvshows = ({ tag }) => {
   return (
     <>
       <Navbar tag={tag} />
+      <Filters />
       <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}
