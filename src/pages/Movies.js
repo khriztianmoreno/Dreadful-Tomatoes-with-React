@@ -22,7 +22,7 @@ const Movies = ({ tag }) => {
   return (
     <>
       <Navbar tag={tag} />
-      <Content movies={currentMovies} />
+      <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}
         currentPage={currentPage}
