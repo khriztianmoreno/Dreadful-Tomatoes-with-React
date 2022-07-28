@@ -37,6 +37,7 @@ const Tvshows = ({ tag }) => {
 
     if (findTvShowsRefined === "undefined") {
       setTvshows(Data.entries.filter((data) => data.programType === "series"));
+      setCurrentPage(1);
     } else {
       setTvshows(
         Data.entries.filter(
@@ -45,6 +46,7 @@ const Tvshows = ({ tag }) => {
             data.programType === "series"
         )
       );
+      setCurrentPage(1);
     }
   };
 

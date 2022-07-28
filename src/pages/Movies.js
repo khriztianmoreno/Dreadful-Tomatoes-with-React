@@ -37,6 +37,7 @@ const Movies = ({ tag }) => {
 
     if (findMovieRefined === "undefined") {
       setMovies(Data.entries.filter((data) => data.programType === "movie"));
+      setCurrentPage(1);
     } else {
       setMovies(
         Data.entries.filter(
@@ -45,6 +46,7 @@ const Movies = ({ tag }) => {
             data.programType === "movie"
         )
       );
+      setCurrentPage(1);
     }
   };
 
