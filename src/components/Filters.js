@@ -4,11 +4,18 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/filters.scss";
 
-const Filters = () => {
+const Filters = ({ submit, reference }) => {
   return (
-    <section className="search-container">
-      <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
-      <input type="text" className="input-search" placeholder="Name"></input>
+    <section>
+      <form onSubmit={submit} className="search-container" ref={reference}>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
+        <input
+          type="text"
+          name="text"
+          className="input-search"
+          placeholder="Name"
+        ></input>
+      </form>
     </section>
   );
 };

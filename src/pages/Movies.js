@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import Navbar from "../components/Navbar";
 import Filters from "../components/Filters";
@@ -9,9 +9,8 @@ import Footer from "../components/Footer";
 import Data from "../data/data.json";
 
 const Movies = ({ tag }) => {
-  const Movies = Data.entries.filter((data) => data.programType === "movie");
-
-  const [movies] = useState(Movies);
+  const inputText = useRef(null);
+  const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
 
@@ -20,10 +19,40 @@ const Movies = ({ tag }) => {
   const currentMovies = movies.slice(indexOfFirstPost, indexOfLastPost);
   const numberOfPages = Math.ceil(movies.length / moviesPerPage);
 
+  useEffect(() => {
+    const filtersMovies = () => {
+      setMovies(Data.entries.filter((data) => data.programType === "movie"));
+    };
+    filtersMovies();
+  }, []);
+
+  const handleFilterOnSubmit = (e) => {
+    e.preventDefault();
+    const inputData = new FormData(inputText.current);
+    const findMoviesRaw = inputData.get("text");
+
+    const firstLetter = findMoviesRaw[0]?.toUpperCase();
+    const lastLetters = findMoviesRaw.slice(1);
+    const findMovieRefined = `${firstLetter}${lastLetters}`;
+
+    if (findMovieRefined === "undefined") {
+      setMovies(Data.entries.filter((data) => data.programType === "movie"));
+    } else {
+      setMovies(
+        Data.entries.filter(
+          (data) =>
+            data.title.includes(findMovieRefined) &&
+            data.programType === "movie"
+        )
+      );
+    }
+  };
+  console.log(movies);
+
   return (
     <>
       <Navbar tag={tag} />
-      <Filters />
+      <Filters reference={inputText} submit={handleFilterOnSubmit} />
       <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}
