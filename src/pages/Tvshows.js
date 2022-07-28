@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Navbar from "../components/Navbar";
 import Filters from "../components/Filters";
@@ -9,9 +9,8 @@ import Footer from "../components/Footer";
 import Data from "../data/data.json";
 
 const Tvshows = ({ tag }) => {
-  const Tvshows = Data.entries.filter((data) => data.programType === "series");
-
-  const [tvshows] = useState(Tvshows);
+  const inputText = useRef(null);
+  const [tvshows, setTvshows] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
 
@@ -20,10 +19,39 @@ const Tvshows = ({ tag }) => {
   const currentMovies = tvshows.slice(indexOfFirstPost, indexOfLastPost);
   const numberOfPages = Math.ceil(tvshows.length / moviesPerPage);
 
+  useEffect(() => {
+    const filtersTvShows = () => {
+      setTvshows(Data.entries.filter((data) => data.programType === "series"));
+    };
+    filtersTvShows();
+  }, []);
+
+  const handleFilterOnSubmit = (e) => {
+    e.preventDefault();
+    const inputData = new FormData(inputText.current);
+    const findTvShowsRaw = inputData.get("text");
+
+    const firstLetter = findTvShowsRaw[0]?.toUpperCase();
+    const lastLetters = findTvShowsRaw.slice(1);
+    const findTvShowsRefined = `${firstLetter}${lastLetters}`;
+
+    if (findTvShowsRefined === "undefined") {
+      setTvshows(Data.entries.filter((data) => data.programType === "series"));
+    } else {
+      setTvshows(
+        Data.entries.filter(
+          (data) =>
+            data.title.includes(findTvShowsRefined) &&
+            data.programType === "series"
+        )
+      );
+    }
+  };
+
   return (
     <>
       <Navbar tag={tag} />
-      <Filters />
+      <Filters reference={inputText} submit={handleFilterOnSubmit} />
       <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}
