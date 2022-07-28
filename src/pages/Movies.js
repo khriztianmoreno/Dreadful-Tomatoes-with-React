@@ -47,7 +47,6 @@ const Movies = ({ tag }) => {
       );
     }
   };
-  console.log(movies);
 
   return (
     <>
