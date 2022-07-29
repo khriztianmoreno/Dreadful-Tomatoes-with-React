@@ -20,9 +20,9 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
       <nav>
         <ul className="pagination justify-content-center">
           <li className="page-item-prev">
-            <a className="page-link" onClick={prevPage} href="#">
+            <button className="page-link" onClick={prevPage} href="#">
               {previus}
-            </a>
+            </button>
           </li>
           {pageNumbers.map((pgNumber) => (
             <li
@@ -31,19 +31,19 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
                 currentPage === pgNumber ? "active" : ""
               } `}
             >
-              <a
+              <button
                 onClick={() => setCurrentPage(pgNumber)}
                 className="page-link"
                 href="#"
               >
                 {pgNumber}
-              </a>
+              </button>
             </li>
           ))}
           <li className="page-item-next">
-            <a className="page-link" onClick={nextPage} href="#">
+            <button className="page-link" onClick={nextPage} href="#">
               {next}
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
