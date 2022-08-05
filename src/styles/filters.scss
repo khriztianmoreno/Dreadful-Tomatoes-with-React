@@ -1,19 +1,19 @@
+@import "variables.scss";
+@import "node_modules/react-datepicker/src/stylesheets/datepicker.scss";
+
 .input-search[type="text"] {
-  width: 800px;
+  width: 700px;
   border: none;
   border-radius: 15px;
   margin: 8px 0;
   outline: none;
   padding: 5px;
-  box-sizing: border-box;
-  padding-left: 40px;
+  padding-left: 36px;
 }
 
 .search-container {
   display: flex;
   align-items: center;
-  padding: 8px 0px 8px 12px;
-  background-color: red;
 }
 
 .icon {
@@ -21,4 +21,60 @@
   left: 34px;
   padding: 9px 8px;
   color: rgb(255, 0, 0);
+}
+
+.datePicker {
+  font-size: 13px;
+  border-radius: 15px;
+  border: none;
+  line-height: 16px;
+  padding: 6px 10px 5px;
+  outline: none;
+}
+
+.filter-container {
+  background-color: red;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.react-datepicker__year-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 210px;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  margin-top: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.944rem;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: #ff0000;
+  border-bottom: 1px solid #ff0000;
+  border-top-left-radius: 0.3rem;
+  padding: 8px 0;
+  position: relative;
+}
+
+.react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-year-read-view--down-arrow,
+.react-datepicker__navigation-icon::before {
+  border-color: #ffffff;
+  border-style: solid;
+  border-width: 3px 3px 0 0;
+  content: "";
+  display: block;
+  height: 9px;
+  position: absolute;
+  top: 6px;
+  width: 9px;
 }
