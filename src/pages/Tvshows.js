@@ -13,6 +13,7 @@ const Tvshows = ({ tag }) => {
   const [tvshows, setTvshows] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
+  const [startDate, setStartDate] = useState(new Date());
 
   const indexOfLastPost = currentPage * moviesPerPage;
   const indexOfFirstPost = indexOfLastPost - moviesPerPage;
@@ -26,11 +27,23 @@ const Tvshows = ({ tag }) => {
     filtersTvShows();
   }, []);
 
+  const filterYearTvShows = (date) => {
+    if (tag === "tvshows") {
+      setTvshows(
+        Data.entries.filter(
+          (data) =>
+            data.programType.includes("series") &&
+            data.releaseYear === date.getFullYear()
+        )
+      );
+      setCurrentPage(1);
+    }
+  };
+
   const handleFilterOnSubmit = (e) => {
     e.preventDefault();
     const inputData = new FormData(inputText.current);
     const findTvShowsRaw = inputData.get("text");
-
     const firstLetter = findTvShowsRaw[0]?.toUpperCase();
     const lastLetters = findTvShowsRaw.slice(1);
     const findTvShowsRefined = `${firstLetter}${lastLetters}`;
@@ -53,7 +66,14 @@ const Tvshows = ({ tag }) => {
   return (
     <>
       <Navbar tag={tag} />
-      <Filters reference={inputText} submit={handleFilterOnSubmit} />
+      <Filters
+        tag={tag}
+        reference={inputText}
+        submit={handleFilterOnSubmit}
+        startDate={startDate}
+        setStartDate={setStartDate}
+        filterYearTvShows={filterYearTvShows}
+      />
       <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}

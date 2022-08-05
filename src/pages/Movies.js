@@ -13,6 +13,7 @@ const Movies = ({ tag }) => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(10);
+  const [startDate, setStartDate] = useState(new Date());
 
   const indexOfLastPost = currentPage * moviesPerPage;
   const indexOfFirstPost = indexOfLastPost - moviesPerPage;
@@ -26,11 +27,23 @@ const Movies = ({ tag }) => {
     filtersMovies();
   }, []);
 
+  const filterYearMovies = (date) => {
+    if (tag === "movies") {
+      setMovies(
+        Data.entries.filter(
+          (data) =>
+            data.programType.includes("movie") &&
+            data.releaseYear === date.getFullYear()
+        )
+      );
+      setCurrentPage(1);
+    }
+  };
+
   const handleFilterOnSubmit = (e) => {
     e.preventDefault();
     const inputData = new FormData(inputText.current);
     const findMoviesRaw = inputData.get("text");
-
     const firstLetter = findMoviesRaw[0]?.toUpperCase();
     const lastLetters = findMoviesRaw.slice(1);
     const findMovieRefined = `${firstLetter}${lastLetters}`;
@@ -53,7 +66,14 @@ const Movies = ({ tag }) => {
   return (
     <>
       <Navbar tag={tag} />
-      <Filters reference={inputText} submit={handleFilterOnSubmit} />
+      <Filters
+        tag={tag}
+        reference={inputText}
+        submit={handleFilterOnSubmit}
+        startDate={startDate}
+        setStartDate={setStartDate}
+        filterYearMovies={filterYearMovies}
+      />
       <Content movies={currentMovies} tag={tag} />
       <Pagination
         numberOfPages={numberOfPages}
