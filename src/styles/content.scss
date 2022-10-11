@@ -1,0 +1,101 @@
+.box-movie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.87);
+  padding: 0px 190px;
+}
+
+.box-popular-movie {
+  margin: 0;
+  padding-top: 30px;
+  padding-left: 192px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+}
+
+.box-popular-serie {
+  margin: 0;
+  padding-top: 30px;
+  padding-left: 192px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+}
+
+.box-card-movie {
+  width: 170px;
+  height: 255px;
+}
+
+.box-card-movie img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.box-card-title {
+  height: 43px;
+  position: relative;
+  z-index: 1;
+  bottom: 47px;
+  background-color: rgba(0, 0, 0, 0.658);
+  margin: 0;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box-card-title p {
+  color: white;
+  padding-left: 7px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.box-card-title-hide {
+  display: none;
+}
+
+.box-card-movie:hover .box-card-title-hide {
+  height: 215px;
+  position: relative;
+  z-index: 1;
+  bottom: 219px;
+  background-color: rgba(0, 0, 0, 0.658);
+  margin: 0;
+  display: flex;
+  align-content: center;
+  color: white;
+  padding-left: 7px;
+  font-family: sans-serif;
+  font-size: 12px;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.box-card-movie:hover .box-card-title p {
+  display: none;
+}
+
+.box-card-movie:hover .box-card-title {
+  display: none;
+}
+
+.box-card-movie:hover .box-card-title-hide div > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.box-card-movie:hover .box-card-title-hide-container {
+  display: flex;
+  gap: 5px;
+}
+
+.box-card-movie:hover .box-card-title-hide-icon {
+  color: red;
+}

@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-ReactDOM.render(
+import LandingPage from "./pages/Landingpage";
+import Movies from "./pages/Movies";
+import TvShows from "./pages/Tvshows";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <React.StrictMode>
-
-  </React.StrictMode>,
-  document.getElementById('root')
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/movies" element={<Movies tag="movies" />} />
+        <Route path="/tvshows" element={<TvShows tag="tvshows" />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );

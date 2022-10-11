@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+}
+.header {
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.header-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-navbar-item {
+  color: white;
+  display: flex;
+}
+.header-navbar-item img {
+  padding: 18.45px;
+}
+.header-navbar-item:nth-child(1) {
+  border-left: 1px solid;
+  padding-left: 10px;
+}
+.header-navbar-item:nth-child(2) {
+  border-right: 1px solid;
+}
+.header-navbar-item button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 21px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header-navbar-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-navbar-sections {
+  display: flex;
+  gap: 30px;
+}
+
+.header-navbar-sections p {
+  color: white;
+}
+
+.header-navbar-movies {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+  cursor: pointer;
+}
+.header-navbar-movies-red {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+  background-color: red;
+  cursor: pointer;
+}
+
+.header-navbar-tvshows {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-navbar-tvshows-red {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: red;
+  height: 93px;
+  width: 120px;
+  justify-content: center;
+  cursor: pointer;
+}
